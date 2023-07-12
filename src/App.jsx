@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import './App.css';
 import CakeContainer from './components/CakeContainer';
-import store from './cakes/store/store';
+import store from './redux/cakes/store/store';
 
 const App = () => {
   return (
