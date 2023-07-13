@@ -3,11 +3,10 @@ import { BUY_ICECREAM, REDUCE_PRICE } from '../actions/iceCreamType'
 
 const iceCreamInitialState = {
     numOfIceCream : 20,
-    price: 100
+    price: 5
 }
 
 const iceCreameReducer = ( state = iceCreamInitialState, action ) => {
-    console.log('-=-=-=-=-reducers', action.type, state)
   switch(action.type){
     case BUY_ICECREAM : return {
         ...state,

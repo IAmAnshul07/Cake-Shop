@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { buyIceCream,  reducePriceOfIceCream } from '../redux/iceCream/actions/iceCreamAction';
 
 const IceCreamContainer = (props) => {
+
+    
     //const  numOfIceCream = useSelector(state => state.cream.numOfIceCream)
     //const priceOfCream = useSelector(state => state.cream.price)
+    //const isDisabled = price <= 0 ? true : false
     const {price, numOfIceCream} = useSelector(state => state.cream)
     const dispatch = useDispatch();
-    console.log('=-=-=-=-=-',numOfIceCream);
     const handleOnClick = () => {
         dispatch(buyIceCream())
     }
@@ -20,8 +22,8 @@ const IceCreamContainer = (props) => {
     <>
         <h1>number of Ice-Cream : <span>{numOfIceCream ?? 0}</span></h1>
         <h1>Price of Ice-Cream : <span>{price ?? 0}</span></h1>
-        <button onClick={handleOnClick}>Buy ice-Cream</button>
-        <button onClick={handlePriceOnClick}>Reduce Price</button>
+        <button onClick={handleOnClick} disabled={!numOfIceCream} >Buy ice-Cream</button>
+        <button onClick={handlePriceOnClick} disabled={!price} >Reduce Price</button>
     </>
   )
 }
